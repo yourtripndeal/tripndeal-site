@@ -1,9 +1,0 @@
-[build]
-  command = "npm run build"
-  publish = "_site"
-
-# Allow /admin to be served as a single page for Netlify CMS
-[[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
-  status = 200

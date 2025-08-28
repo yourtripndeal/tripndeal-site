@@ -1,5 +1,0 @@
-{
-  "tags": "packages",
-  "layout": "package.njk",
-  "permalink": "/packages/{{ page.fileSlug }}/index.html"
-}
