@@ -1,0 +1,36 @@
+---
+layout: layouts/layout.njk
+title: {{ title }}
+---
+
+<section class="bg-white py-20 px-4 max-w-screen-xl mx-auto">
+  <h1 class="text-4xl font-extrabold text-center text-indigo-700 mb-6">{{ title }}</h1>
+
+  <p class="text-lg text-gray-700 text-center max-w-2xl mx-auto mb-12">
+    {{ intro }}
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div>
+      <h2 class="text-2xl font-bold text-indigo-600 mb-4">Our Mission</h2>
+      <p class="text-gray-700 leading-relaxed">
+        {{ mission }}
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-2xl font-bold text-indigo-600 mb-4">Why Choose Us</h2>
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        {% for item in why %}
+          <li>{{ item.point }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-16 text-center">
+    <a href="/packages/" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition">
+      Explore Our Packages
+    </a>
+  </div>
+</section>
