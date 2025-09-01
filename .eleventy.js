@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
   eleventyConfig.addPassthroughCopy("src/images/logo.png");
+  eleventyConfig.addPassthroughCopy("admin");
 
   // ✅ Optional: Watch for changes in styles
   eleventyConfig.setWatchThrottleWaitTime(100);
