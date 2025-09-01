@@ -1,16 +1,18 @@
-module.exports = function (eleventyConfig) {
-  // ✅ Passthrough copy for images
+module.exports = function(eleventyConfig) {
+  // ✅ Passthrough copy for static assets
   eleventyConfig.addPassthroughCopy("src/images");
-
-  // ✅ Passthrough copy for CSS (if needed)
   eleventyConfig.addPassthroughCopy("src/styles.css");
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("src/images/logo.png");
 
-  // ✅ Set input and output directories
+  // ✅ Optional: Watch for changes in styles
+  eleventyConfig.setWatchThrottleWaitTime(100);
+  eleventyConfig.addWatchTarget("src/styles.css");
+
+  // ✅ Input/output directories
   return {
     dir: {
       input: "src",
-      includes: "_includes",
-      data: "_data",
       output: "_site"
     },
     passthroughFileCopy: true
