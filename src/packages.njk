@@ -1,6 +1,6 @@
 ---
 title: Travel Packages
-layout: layout.njk
+layout: layouts/layout.njk
 ---
 
 <h1 class="text-3xl font-bold mb-6">Available Packages</h1>
@@ -9,7 +9,7 @@ layout: layout.njk
   {% for pkg in collections.packages %}
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
       {% if pkg.data.image %}
-        <img src="{{ pkg.data.image }}" alt="{{ pkg.data.title }}" class="w-full h-48 object-cover" />
+        <img src="{{ pkg.data.image }}" alt="{{ pkg.data.title }}" class="w-full h-48 object-cover" loading="lazy" />
       {% endif %}
       <div class="p-4">
         <h2 class="text-xl font-semibold mb-2">
