@@ -1,17 +1,12 @@
----
-pagination:
-  data: collections.packages
-  size: 1
-permalink: false
----
-<article class="card">
-  <p class="eyebrow">{{ destination }}{% if duration %} • {{ duration }}{% endif %}</p>
-  <h1>{{ title }}</h1>
-  {% if image %}
-  <img src="{{ image | url }}" alt="{{ title }}" class="banner"/>
-  {% endif %}
-  <p class="price">{% if price %}From {{ price }}{% endif %}</p>
-  <div class="content">
-    {{ content | safe }}
-  </div>
-</article>
+{% extends "layout.njk" %}
+
+{% block content %}
+  <article class="package">
+    <h1>{{ title }}</h1>
+    <div class="package-body">
+      {{ content | safe }}
+    </div>
+
+    <p><a href="/packages/">← Back to all packages</a></p>
+  </article>
+{% endblock %}

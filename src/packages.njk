@@ -1,22 +1,18 @@
 ---
+title: Travel Packages
 layout: layout.njk
-title: Packages
-permalink: "/packages/index.html"
 ---
 
-<h2>Featured Packages</h2>
-<div class="grid">
-{% for pkg in collections.packages | reverse %}
-  <a class="card-link" href="{{ pkg.url }}">
-    <article class="card">
-      <p class="eyebrow">{{ pkg.data.destination }}{% if pkg.data.duration %} • {{ pkg.data.duration }}{% endif %}</p>
-      <h3>{{ pkg.data.title }}</h3>
-      {% if pkg.data.image %}
-      <img src="{{ pkg.data.image | url }}" alt="{{ pkg.data.title }}"/>
+<h1>Available Packages</h1>
+
+<div class="packages-grid">
+  {% for pkg in collections.packages %}
+    <div class="package-card">
+      <h2><a href="{{ pkg.url }}">{{ pkg.data.title }}</a></h2>
+      {% if pkg.data.excerpt %}
+        <p>{{ pkg.data.excerpt }}</p>
       {% endif %}
-      {% if pkg.data.price %}<p class="price">From {{ pkg.data.price }}</p>{% endif %}
-      <p class="more">View details →</p>
-    </article>
-  </a>
-{% endfor %}
+      <a class="btn" href="{{ pkg.url }}">View Details</a>
+    </div>
+  {% endfor %}
 </div>

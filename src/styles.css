@@ -1,17 +1,64 @@
-:root { --gap: 1rem; --radius: 14px; }
-* { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#222; }
-.wrap { max-width: 1100px; margin: 0 auto; padding: 1rem; }
-.header, .footer { display:flex; align-items:center; justify-content:space-between; gap: var(--gap); }
-.header a { text-decoration: none; color:#0e5ec7; }
-nav a { margin-left: .75rem; }
-.hero { padding: 4rem 0; text-align: center; }
-.btn { display:inline-block; padding:.75rem 1rem; border-radius: var(--radius); background:#0e5ec7; color:#fff; text-decoration:none; }
-.grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--gap); }
-.card { border:1px solid #eee; border-radius: var(--radius); padding:1rem; background:#fff; box-shadow:0 1px 6px rgba(0,0,0,.04); }
-.card img { width:100%; height:180px; object-fit:cover; border-radius:12px; }
-.card-link { text-decoration: none; color: inherit; }
-.eyebrow { color:#666; font-size:.9rem; margin:0; }
-.price { font-weight:700; color:#0e5ec7; }
-.more { color:#0e5ec7; }
-.banner { width:100%; height:320px; object-fit:cover; border-radius:12px; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+h1, h2 {
+  color: #222;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Grid for packages */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.package-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+}
+
+.package-card h2 {
+  margin-top: 0;
+}
+
+.package-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #0077cc;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  background: #005fa3;
+}

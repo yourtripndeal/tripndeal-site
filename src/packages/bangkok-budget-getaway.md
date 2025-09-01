@@ -1,11 +1,7 @@
 ---
 title: Bangkok Budget Getaway
-destination: Thailand
-price: BDT 45,000
-duration: 4D/3N
-image: /images/uploads/bangkok.jpg
+layout: package.njk
+tags: packages
+excerpt: 3 nights in vibrant Bangkok with tours & budget hotel.
 ---
-
-**Includes:** Hotel, airport transfers, city tour, and breakfast.
-
-**Highlights:** Grand Palace, Wat Arun, floating market.
+Enjoy 3 nights in vibrant Bangkok with guided city tours, a budget-friendly hotel stay, and airport transfers included.
