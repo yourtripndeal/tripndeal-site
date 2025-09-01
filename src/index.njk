@@ -3,8 +3,37 @@ layout: layout.njk
 title: Home
 ---
 
-<section class="hero">
-  <h1>Discover Asia with Trip & Deal</h1>
-  <p>Affordable family trips, honeymoon packages, and curated getaways.</p>
-  <p><a class="btn" href="/packages/">Browse Packages</a></p>
+<!-- Hero Section -->
+<section class="hero py-16 px-4 text-center bg-blue-50">
+  <h1 class="text-4xl font-bold mb-4">Discover Asia with Trip & Deal</h1>
+  <p class="text-lg mb-6">Affordable family trips, honeymoon packages, and curated getaways.</p>
+  <p>
+    <a class="btn bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition" href="/packages/">
+      Browse Packages
+    </a>
+  </p>
+</section>
+
+<!-- Featured Packages Section -->
+<section class="py-12 px-4 max-w-6xl mx-auto">
+  <h2 class="text-3xl font-bold text-center mb-8">Featured Packages</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+    {% for package in packages %}
+      <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+        <img src="/images/{{ package.image }}" alt="{{ package.title }}" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">{{ package.title }}</h3>
+          <p class="text-gray-600 mb-4">{{ package.description }}</p>
+          <a href="/packages/{{ package.slug }}/" class="text-blue-500 hover:underline">View Details</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- View All Packages Button -->
+  <div class="text-center">
+    <a href="/packages/" class="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">
+      View All Packages
+    </a>
+  </div>
 </section>

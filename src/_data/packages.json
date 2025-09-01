@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Beach Escape",
+    "description": "Relax on pristine beaches with our all-inclusive package.",
+    "image": "beach.jpg",
+    "slug": "beach-escape"
+  },
+  {
+    "title": "Mountain Retreat",
+    "description": "Reconnect with nature in cozy mountain cabins.",
+    "image": "mountain.jpg",
+    "slug": "mountain-retreat"
+  },
+  {
+    "title": "City Adventure",
+    "description": "Explore vibrant cities and hidden gems.",
+    "image": "city.jpg",
+    "slug": "city-adventure"
+  }
+]

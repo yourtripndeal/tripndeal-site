@@ -3,16 +3,23 @@ title: Travel Packages
 layout: layout.njk
 ---
 
-<h1>Available Packages</h1>
+<h1 class="text-3xl font-bold mb-6">Available Packages</h1>
 
-<div class="packages-grid">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
   {% for pkg in collections.packages %}
-    <div class="package-card">
-      <h2><a href="{{ pkg.url }}">{{ pkg.data.title }}</a></h2>
-      {% if pkg.data.excerpt %}
-        <p>{{ pkg.data.excerpt }}</p>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+      {% if pkg.data.image %}
+        <img src="{{ pkg.data.image }}" alt="{{ pkg.data.title }}" class="w-full h-48 object-cover" />
       {% endif %}
-      <a class="btn" href="{{ pkg.url }}">View Details</a>
+      <div class="p-4">
+        <h2 class="text-xl font-semibold mb-2">
+          <a href="{{ pkg.url }}" class="text-blue-600 hover:underline">{{ pkg.data.title }}</a>
+        </h2>
+        {% if pkg.data.excerpt %}
+          <p class="text-gray-700 mb-4">{{ pkg.data.excerpt }}</p>
+        {% endif %}
+        <a class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-200" href="{{ pkg.url }}">View Details</a>
+      </div>
     </div>
   {% endfor %}
 </div>
