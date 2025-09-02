@@ -21,6 +21,74 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Hero section styles */
+.hero {
+  position: relative;
+  background: url('/images/hero-bg.jpg') center/cover no-repeat;
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
+  padding: 4rem 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background-color: #ff6b00;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #e65c00;
+}
+
+.btn.secondary {
+  background-color: white;
+  color: #333;
+  border: 2px solid #ff6b00;
+}
+
+.btn.secondary:hover {
+  background-color: #ff6b00;
+  color: white;
+}
+
 /* Grid for packages */
 .packages-grid {
   display: grid;
@@ -58,22 +126,6 @@ a:hover {
 .package-card p {
   font-size: 0.9rem;
   color: #555;
-}
-
-/* Button styles */
-.btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background: #0077cc;
-  color: white;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #005fa3;
 }
 
 /* Aspect ratio fallback */

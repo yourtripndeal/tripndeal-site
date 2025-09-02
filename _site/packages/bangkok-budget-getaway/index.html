@@ -3,18 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Bangkok Budget Getaway</title>
-  <meta name="agd-partner-manual-verification" />
+  <meta name="agd-partner-manual-verification" content="true" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 </head>
 <body>
+  <section class="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Discover Your Next Adventure</h1>
+      <p>Curated travel packages, visa support, and unbeatable deals — all in one place.</p>
+      <div class="hero-buttons">
+        <a href="/packages" class="btn primary">Explore Packages</a>
+        <a href="#contact" class="btn secondary">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
   <main>
     <p>Enjoy 3 nights in vibrant Bangkok with guided city tours, a budget-friendly hotel stay, and airport transfers included.</p>
 
   </main>
+
   <script>
-  if (window.location.hash.includes('recovery_token')) {
-    window.location.href = '/admin/' + window.location.hash;
-  }
-</script>
+    // Redirect Netlify Identity recovery flow to /admin
+    if (window.location.hash.includes('recovery_token')) {
+      window.location.href = '/admin/' + window.location.hash;
+    }
+  </script>
 </body>
 </html>
