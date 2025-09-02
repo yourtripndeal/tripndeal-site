@@ -1,12 +1,9 @@
 backend:
-  name: github
-  repo: yourtripndeal/tripndeal-site
-  branch: main
-  auth_scope: repo
-  base_url: https://yourtripndeal.auth0.com
-  auth_endpoint: https://yourtripndeal.auth0.com/authorize
+  name: auth0
+  login: https://yourtripndeal.auth0.com/login
   client_id: 9xWvKfT2gH3J7bQvL8mX9zPqR5dT6cN1
-  login: false
+  auth_endpoint: /authorize
+  base_url: https://yourtripndeal.auth0.com
 
 local_backend: true
 
