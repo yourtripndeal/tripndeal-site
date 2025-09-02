@@ -8,29 +8,17 @@
   <body>
     <!-- Load Decap CMS -->
     <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
-
-    <!-- Load Netlify Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-        window.netlifyIdentity.init();
-      }
-    </script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
-  const token = window.location.hash.match(/recovery_token=([^&]+)/);
-  if (token) {
-    netlifyIdentity.init();
-    netlifyIdentity.on('init', () => {
-      netlifyIdentity.recover(token[1], true);
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
     });
+    window.netlifyIdentity.init();
   }
 </script>
   </body>
