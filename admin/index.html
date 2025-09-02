@@ -8,18 +8,34 @@
   <body>
     <!-- Load Decap CMS -->
     <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
+
+    <!-- Load Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
+    <script>
+      if (window.netlifyIdentity) {
+        const tokenMatch = window.location.hash.match(/invite_token=([^&]+)/);
+        const inviteToken = tokenMatch ? tokenMatch[1] : null;
+
+        window.netlifyIdentity.on("init", user => {
+          if (!user && inviteToken) {
+            // Accept invite and trigger password setup
+            window.netlifyIdentity.acceptInvite(inviteToken, true)
+              .then(() => {
+                console.log("Invite accepted");
+                window.location.href = "/admin/";
+              })
+              .catch(err => {
+                console.error("Invite error:", err);
+              });
+          } else if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              window.location.href = "/admin/";
+            });
+          }
         });
+
+        window.netlifyIdentity.init();
       }
-    });
-    window.netlifyIdentity.init();
-  }
-</script>
+    </script>
   </body>
 </html>
