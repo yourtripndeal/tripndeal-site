@@ -3,8 +3,8 @@ backend:
   repo: yourtripndeal/tripndeal-site
   branch: main
   auth_scope: repo
-  base_url: https://dev-lujpxfytago3cfzl.us.auth0.com
-  client_id: ekuNJhb2ft5pkI5jMJdSf43o2VRwRCER
+  base_url: "${AUTH0_DOMAIN}"
+  client_id: "${AUTH0_CLIENT_ID}"
 
 media_folder: "src/images"
 public_folder: "/images"
