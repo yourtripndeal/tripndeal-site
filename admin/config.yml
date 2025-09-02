@@ -1,9 +1,6 @@
 backend:
-  name: auth0
-  login: https://yourtripndeal.auth0.com/login
-  client_id: 9xWvKfT2gH3J7bQvL8mX9zPqR5dT6cN1
-  auth_endpoint: /authorize
-  base_url: https://yourtripndeal.auth0.com
+  name: git-gateway
+  branch: main # or your default branch
 
 local_backend: true
 
