@@ -1,10 +1,13 @@
 backend:
-  name: git-gateway
+  name: github
   repo: yourtripndeal/tripndeal-site
   branch: main
   auth_scope: repo
   base_url: https://yourtripndeal.auth0.com
   client_id: 9xWvKfT2gH3J7bQvL8mX9zPqR5dT6cN1
+
+local_backend: true
+
 site_url: https://tripndeal.com
 logo_url: /images/logo.png
 
@@ -29,9 +32,10 @@ collections:
     folder: "src/packages"
     create: true
     slug: "{{slug}}"
+    preview_path: "packages/{{slug}}"
+    summary: "{{title}} — {{description}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
-      
