@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: yourtripndeal/tripndeal-site
   branch: main
+  auth_scope: repo
+  base_url: https://dev-lujpxfytago3cfzl.us.auth0.com
+  client_id: ekuNJhb2ft5pkI5jMJdSf43o2VRwRCER
 
 media_folder: "src/images"
 public_folder: "/images"
