@@ -2,8 +2,25 @@
   command = "npm run build"
   publish = "_site"
 
-# Allow /admin to be served as a single page for Netlify CMS
+# ✅ Redirect /admin and all subroutes to the CMS entry point
 [[redirects]]
   from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# ✅ Redirect root-level identity actions to /admin for widget handling
+[[redirects]]
+  from = "/.netlify/identity/*"
+  to = "/admin/index.html"
+  status = 200
+
+# ✅ Optional: redirect /login or /reset-password to /admin for UX clarity
+[[redirects]]
+  from = "/login"
+  to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/reset-password"
   to = "/admin/index.html"
   status = 200
