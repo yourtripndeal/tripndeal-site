@@ -13,27 +13,13 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
       if (window.netlifyIdentity) {
-        const tokenMatch = window.location.hash.match(/invite_token=([^&]+)/);
-        const inviteToken = tokenMatch ? tokenMatch[1] : null;
-
         window.netlifyIdentity.on("init", user => {
-          if (!user && inviteToken) {
-            // Accept invite and trigger password setup
-            window.netlifyIdentity.acceptInvite(inviteToken, true)
-              .then(() => {
-                console.log("Invite accepted");
-                window.location.href = "/admin/";
-              })
-              .catch(err => {
-                console.error("Invite error:", err);
-              });
-          } else if (!user) {
+          if (!user) {
             window.netlifyIdentity.on("login", () => {
-              window.location.href = "/admin/";
+              document.location.href = "/admin/";
             });
           }
         });
-
         window.netlifyIdentity.init();
       }
     </script>
