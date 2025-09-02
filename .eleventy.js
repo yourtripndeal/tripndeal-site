@@ -3,6 +3,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("src/favicon.png"); // Added in case you prefer PNG
   eleventyConfig.addPassthroughCopy("src/images/logo.png");
   eleventyConfig.addPassthroughCopy("admin");
 
@@ -15,7 +16,6 @@ module.exports = function(eleventyConfig) {
     dir: {
       input: "src",
       output: "_site"
-    },
-    passthroughFileCopy: true
+    }
   };
 };
