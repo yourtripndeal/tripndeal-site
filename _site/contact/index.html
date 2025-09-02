@@ -16,5 +16,10 @@
   <li>WhatsApp: +8801XXXXXXXXX</li>
 </ul>
   </main>
+  <script>
+  if (window.location.hash.includes('recovery_token')) {
+    window.location.href = '/admin/#' + window.location.hash;
+  }
+</script>
 </body>
 </html>
