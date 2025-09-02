@@ -2,8 +2,8 @@ module.exports = function(eleventyConfig) {
   // ✅ Passthrough copy for static assets
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/styles.css");
-  eleventyConfig.addPassthroughCopy("src/favicon.ico");
-  eleventyConfig.addPassthroughCopy("src/favicon.png"); // Added in case you prefer PNG
+  eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy("favicon.png"); // Added in case you prefer PNG
   eleventyConfig.addPassthroughCopy("src/images/logo.png");
   eleventyConfig.addPassthroughCopy("admin");
 
