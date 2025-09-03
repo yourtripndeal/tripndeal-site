@@ -1,0 +1,8 @@
+<div class="package-card">
+  <div class="aspect-4-3">
+    <img src="{{ pkg.data.image }}" alt="{{ pkg.data.title }}">
+  </div>
+  <h2>{{ pkg.data.title }}</h2>
+  <p>{{ pkg.data.description | truncate(120, true, '...') }}</p>
+  <a href="{{ pkg.url }}" class="btn">View Details</a>
+</div>

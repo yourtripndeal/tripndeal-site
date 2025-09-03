@@ -13,3 +13,21 @@
     {% endfor %}
   </div>
 </section>
+{% set packages = collections.travelPackages | reverse | slice(0, 6) %}
+
+<section class="packages-grid">
+  {% for pkg in packages %}
+    {% include "package-card.njk" %}
+  {% endfor %}
+</section>
+
+{% for pkg in packages %}
+  <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+    <img src="{{ pkg.data.image }}" alt="{{ pkg.data.title }}" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="text-xl font-semibold mb-2">{{ pkg.data.title }}</h3>
+      <p class="text-gray-600 mb-4">{{ pkg.data.description }}</p>
+      <a href="{{ pkg.url }}" class="text-blue-500 hover:underline">View Details</a>
+    </div>
+  </div>
+{% endfor %}

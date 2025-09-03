@@ -2,58 +2,41 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>Contact</title>
+  <title>{{ title or "Trip & Deal" }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="agd-partner-manual-verification" content="true" />
 
-  
-  <meta name="description" content="Curated travel packages across Asia — Trip &amp; Deal">
+  {# SEO Meta Tags #}
+  <meta name="description" content="{{ description or 'Curated travel packages across Asia — Trip & Deal' }}">
   <meta name="keywords" content="Asia travel, family trips, honeymoon packages, Trip & Deal, budget travel">
   <meta name="author" content="Trip & Deal Team">
 
-  
-  <meta property="og:title" content="Contact">
-  <meta property="og:description" content="Curated travel packages across Asia — Trip &amp; Deal">
+  {# Open Graph Tags #}
+  <meta property="og:title" content="{{ title or 'Trip & Deal' }}">
+  <meta property="og:description" content="{{ description or 'Curated travel packages across Asia — Trip & Deal' }}">
   <meta property="og:image" content="/images/og-default.jpg">
-  <meta property="og:url" content="/contact/">
+  <meta property="og:url" content="{{ page.url or 'https://tripndeal.com' }}">
   <meta property="og:type" content="website">
 
-  
+  {# Twitter Card #}
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contact">
-  <meta name="twitter:description" content="Curated travel packages across Asia — Trip &amp; Deal">
+  <meta name="twitter:title" content="{{ title or 'Trip & Deal' }}">
+  <meta name="twitter:description" content="{{ description or 'Curated travel packages across Asia — Trip & Deal' }}">
   <meta name="twitter:image" content="/images/og-default.jpg">
 
-  
+  {# Favicon Links #}
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
 
-  
+  {# Stylesheet #}
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <section class="hero">
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <h1>Discover Your Next Adventure</h1>
-      <p>Curated travel packages, visa support, and unbeatable deals — all in one place.</p>
-      <div class="hero-buttons">
-        <a href="/packages" class="btn primary">Explore Packages</a>
-        <a href="#contact" class="btn secondary">Get a Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
+  {% include "hero.njk" %}
 
   <main>
-    
-<h2>Contact Us</h2>
-<p>We'd love to help you plan your trip.</p>
-<ul>
-  <li>Email: hello@tripndeal.com</li>
-  <li>WhatsApp: +8801XXXXXXXXX</li>
-</ul>
+    {{ content | safe }}
   </main>
 
   <script>
