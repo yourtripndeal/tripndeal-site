@@ -1,0 +1,12 @@
+<footer>
+  <div class="footer-links">
+    <ul>
+      {% for link in footer.links %}
+        <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="footer-copy">
+    <p>{{ footer.copyright }}</p>
+  </div>
+</footer>

@@ -1,53 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-  <title>Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="agd-partner-manual-verification" content="true" />
 
-  
-  <meta name="description" content="Curated travel packages across Asia — Trip &amp; Deal">
-  <meta name="keywords" content="Asia travel, family trips, honeymoon packages, Trip & Deal, budget travel">
-  <meta name="author" content="Trip & Deal Team">
+---
+layout: layout.njk
+title: Home
+---
 
-  
-  <meta property="og:title" content="Home">
-  <meta property="og:description" content="Curated travel packages across Asia — Trip &amp; Deal">
-  <meta property="og:image" content="/images/og-default.jpg">
-  <meta property="og:url" content="/">
-  <meta property="og:type" content="website">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Home">
-  <meta name="twitter:description" content="Curated travel packages across Asia — Trip &amp; Deal">
-  <meta name="twitter:image" content="/images/og-default.jpg">
-
-  
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="icon" href="/favicon.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
-
-  
-  <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-  <section class="hero">
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <h1>Discover Your Next Adventure</h1>
-      <p>Curated travel packages, visa support, and unbeatable deals — all in one place.</p>
-      <div class="hero-buttons">
-        <a href="/packages" class="btn primary">Explore Packages</a>
-        <a href="#contact" class="btn secondary">Get a Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <main>
-    
 
 
 <!-- Header -->
@@ -64,15 +20,10 @@
 </header>
 
 <!-- Hero Section -->
-<section class="relative py-28 px-4 text-center text-white bg-[url('/images/hero-bg.jpg')] bg-cover bg-center">
-  <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-transparent"></div>
-  <div class="relative z-10 max-w-3xl mx-auto">
-    <h1 class="text-5xl font-extrabold mb-4 animate-fadeIn">Explore Asia with Trip & Deal</h1>
-    <p class="text-lg mb-6 animate-fadeIn delay-100">Curated travel packages for families, couples, and adventurers — all at unbeatable prices.</p>
-    <a href="/packages/" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition duration-300 animate-fadeIn delay-200">
-      Browse Packages
-    </a>
-  </div>
+<section class="hero">
+  <h1>Explore the World with Trip &amp; Deal</h1>
+  <p>Curated travel packages for every wanderer</p>
+  <a href="/packages" class="cta-button">Browse Packages</a>
 </section>
 
 <!-- Featured Packages -->
@@ -89,25 +40,25 @@
   </div>
 </section>
 
-<!-- Footer -->
+
+
 <footer class="bg-gray-100 py-10 mt-20">
   <div class="max-w-screen-xl mx-auto px-4 text-center text-gray-600">
-    <p class="mb-2">© 2025 Trip & Deal. All rights reserved.</p>
+    <p class="mb-2">© 2025 Trip &amp; Deal. All rights reserved.</p>
     <div class="space-x-4">
-      <a href="/about/" class="hover:text-indigo-600">About Us</a>
-      <a href="/contact/" class="hover:text-indigo-600">Contact</a>
-      <a href="https://facebook.com/tripndeal" class="hover:text-indigo-600">Facebook</a>
-      <a href="https://instagram.com/tripndeal" class="hover:text-indigo-600">Instagram</a>
+      
+        <a href="/about/" class="hover:text-indigo-600">About Us</a>
+      
+        <a href="/contact/" class="hover:text-indigo-600">Contact</a>
+      
+        <a href="https://facebook.com/tripndeal" class="hover:text-indigo-600">Facebook</a>
+      
+        <a href="https://instagram.com/tripndeal" class="hover:text-indigo-600">Instagram</a>
+      
     </div>
   </div>
 </footer>
-  </main>
-
-  <script>
-    // Redirect Netlify Identity recovery flow to /admin
-    if (window.location.hash.includes('recovery_token')) {
-      window.location.href = '/admin/' + window.location.hash;
-    }
-  </script>
-</body>
-</html>
+<!-- SEO Meta Tags -->
+<meta name="description" content="Discover handpicked travel packages, visa info, and exclusive deals with Trip &amp; Deal.">
+<meta property="og:title" content="Trip &amp; Deal — Premium Travel Experiences">
+<meta property="og:image" content="/images/og-default.jpg">

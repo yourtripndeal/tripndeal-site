@@ -2,27 +2,27 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>{{ title or "Trip & Deal" }}</title>
+  <title>{{ settings.metaTitle or title or "Trip & Deal" }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="agd-partner-manual-verification" content="true" />
 
   {# SEO Meta Tags #}
-  <meta name="description" content="{{ description or 'Curated travel packages across Asia — Trip & Deal' }}">
+  <meta name="description" content="{{ settings.metaDescription or description or 'Curated travel packages across Asia — Trip & Deal' }}">
   <meta name="keywords" content="Asia travel, family trips, honeymoon packages, Trip & Deal, budget travel">
   <meta name="author" content="Trip & Deal Team">
 
   {# Open Graph Tags #}
-  <meta property="og:title" content="{{ title or 'Trip & Deal' }}">
-  <meta property="og:description" content="{{ description or 'Curated travel packages across Asia — Trip & Deal' }}">
-  <meta property="og:image" content="/images/og-default.jpg">
+  <meta property="og:title" content="{{ settings.metaTitle or title or 'Trip & Deal' }}">
+  <meta property="og:description" content="{{ settings.metaDescription or description or 'Curated travel packages across Asia — Trip & Deal' }}">
+  <meta property="og:image" content="{{ settings.ogImage or '/images/og-default.jpg' }}">
   <meta property="og:url" content="{{ page.url or 'https://tripndeal.com' }}">
   <meta property="og:type" content="website">
 
   {# Twitter Card #}
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ title or 'Trip & Deal' }}">
-  <meta name="twitter:description" content="{{ description or 'Curated travel packages across Asia — Trip & Deal' }}">
-  <meta name="twitter:image" content="/images/og-default.jpg">
+  <meta name="twitter:title" content="{{ settings.metaTitle or title or 'Trip & Deal' }}">
+  <meta name="twitter:description" content="{{ settings.metaDescription or description or 'Curated travel packages across Asia — Trip & Deal' }}">
+  <meta name="twitter:image" content="{{ settings.ogImage or '/images/og-default.jpg' }}">
 
   {# Favicon Links #}
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -38,7 +38,18 @@
   <main>
     {{ content | safe }}
   </main>
+{% set footer = footer %}
 
+<footer class="bg-gray-100 py-10 mt-20">
+  <div class="max-w-screen-xl mx-auto px-4 text-center text-gray-600">
+    <p class="mb-2">{{ footer.copyright }}</p>
+    <div class="space-x-4">
+      {% for link in footer.links %}
+        <a href="{{ link.url }}" class="hover:text-indigo-600">{{ link.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</footer>
   <script>
     // Redirect Netlify Identity recovery flow to /admin
     if (window.location.hash.includes('recovery_token')) {

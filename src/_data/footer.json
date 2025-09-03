@@ -1,0 +1,9 @@
+{
+  "copyright": "© 2025 Trip & Deal. All rights reserved.",
+  "links": [
+    { "label": "About Us", "url": "/about/" },
+    { "label": "Contact", "url": "/contact/" },
+    { "label": "Facebook", "url": "https://facebook.com/tripndeal" },
+    { "label": "Instagram", "url": "https://instagram.com/tripndeal" }
+  ]
+}

@@ -1,3 +1,4 @@
+{% set settings = settings %}
 ---
 layout: layout.njk
 title: Home
@@ -19,15 +20,10 @@ title: Home
 </header>
 
 <!-- Hero Section -->
-<section class="relative py-28 px-4 text-center text-white bg-[url('/images/hero-bg.jpg')] bg-cover bg-center">
-  <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-transparent"></div>
-  <div class="relative z-10 max-w-3xl mx-auto">
-    <h1 class="text-5xl font-extrabold mb-4 animate-fadeIn">Explore Asia with Trip & Deal</h1>
-    <p class="text-lg mb-6 animate-fadeIn delay-100">Curated travel packages for families, couples, and adventurers — all at unbeatable prices.</p>
-    <a href="/packages/" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition duration-300 animate-fadeIn delay-200">
-      Browse Packages
-    </a>
-  </div>
+<section class="hero">
+  <h1>{{ settings.heroTitle }}</h1>
+  <p>{{ settings.heroSubtitle }}</p>
+  <a href="/packages" class="cta-button">{{ settings.ctaText }}</a>
 </section>
 
 <!-- Featured Packages -->
@@ -43,12 +39,18 @@ title: Home
           loading="lazy"
         >
         <div class="p-5">
-          <h3 class="text-xl font-semibold mb-2">{{ package.data.title }}</h3>
-          <p class="text-gray-600 mb-4">
-            {{ package.data.description | truncate(120, true, '...') }}
-          </p>
-          <a href="{{ package.url }}" class="text-indigo-600 hover:underline">View Details</a>
-        </div>
+  <h3 class="text-xl font-semibold mb-1">{{ package.data.title }}</h3>
+  {% if package.data.location %}
+    <p class="text-sm text-gray-500 mb-1">{{ package.data.location }}</p>
+  {% endif %}
+  {% if package.data.price %}
+    <span class="text-indigo-600 font-semibold block mb-2">From {{ package.data.price }}</span>
+  {% endif %}
+  <p class="text-gray-600 mb-3">
+    {{ package.data.description | truncate(120, true, '...') }}
+  </p>
+  <a href="{{ package.url }}" class="text-indigo-600 hover:underline">View Details</a>
+</div>
       </div>
     {% endfor %}
   </div>
@@ -60,15 +62,19 @@ title: Home
   </div>
 </section>
 
-<!-- Footer -->
+{% set footer = footer %}
+
 <footer class="bg-gray-100 py-10 mt-20">
   <div class="max-w-screen-xl mx-auto px-4 text-center text-gray-600">
-    <p class="mb-2">© 2025 Trip & Deal. All rights reserved.</p>
+    <p class="mb-2">{{ footer.copyright }}</p>
     <div class="space-x-4">
-      <a href="/about/" class="hover:text-indigo-600">About Us</a>
-      <a href="/contact/" class="hover:text-indigo-600">Contact</a>
-      <a href="https://facebook.com/tripndeal" class="hover:text-indigo-600">Facebook</a>
-      <a href="https://instagram.com/tripndeal" class="hover:text-indigo-600">Instagram</a>
+      {% for link in footer.links %}
+        <a href="{{ link.url }}" class="hover:text-indigo-600">{{ link.label }}</a>
+      {% endfor %}
     </div>
   </div>
 </footer>
+<!-- SEO Meta Tags -->
+<meta name="description" content="{{ settings.metaDescription }}">
+<meta property="og:title" content="{{ settings.metaTitle }}">
+<meta property="og:image" content="{{ settings.ogImage }}">

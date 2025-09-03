@@ -36,3 +36,33 @@ collections:
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Slug", name: "slug", widget: "string", required: true }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "src/_data/settings.json"
+        label: "Homepage Settings"
+        name: "homepage"
+        preview_path: ""
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "CTA Button Text", name: "ctaText", widget: "string" }
+          - { label: "Meta Title", name: "metaTitle", widget: "string", required: false }
+          - { label: "Meta Description", name: "metaDescription", widget: "text", required: false }
+          - { label: "Open Graph Image", name: "ogImage", widget: "image", required: false }
+          
+  - name: "footer"
+    label: "Footer"
+    files:
+      - file: "src/_data/footer.json"
+        label: "Footer Links"
+        name: "footer"
+        fields:
+          - { label: "Copyright", name: "copyright", widget: "string" }
+          - label: "Links"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }  
