@@ -10,23 +10,6 @@
     <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
 
     <script>
-      // Initialize Netlify Identity
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.init();
-
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.open("login");
-          } else {
-            startCMS(); // ✅ Only initialize CMS after login
-          }
-        });
-
-        window.netlifyIdentity.on("login", () => {
-          startCMS();
-        });
-      }
-
       function startCMS() {
         CMS.init({
           backend: {
@@ -122,6 +105,28 @@
           ]
         });
       }
+
+      // Wait for DOM and Identity to be ready
+      window.addEventListener("load", () => {
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.init();
+
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.open("login");
+            } else {
+              startCMS();
+            }
+          });
+
+          window.netlifyIdentity.on("login", () => {
+            startCMS();
+          });
+        } else {
+          // fallback: just start CMS if Identity isn't available
+          startCMS();
+        }
+      });
     </script>
   </body>
 </html>
