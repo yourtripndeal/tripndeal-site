@@ -6,29 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <!-- Load Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <!-- Load Decap CMS -->
     <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.init();
+      // Initialize Netlify Identity
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.init();
 
-          window.netlifyIdentity.on("init", user => {
-            if (!user) {
-              window.netlifyIdentity.open("login"); // ✅ Opens email/password modal
-            }
-          });
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.open("login");
+          } else {
+            startCMS(); // ✅ Only initialize CMS after login
+          }
+        });
 
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
+        window.netlifyIdentity.on("login", () => {
+          startCMS();
+        });
+      }
 
-        // Initialize Decap CMS with embedded config
+      function startCMS() {
         CMS.init({
           backend: {
             name: "git-gateway",
@@ -86,7 +85,6 @@
                   file: "src/_data/settings.json",
                   label: "Homepage Settings",
                   name: "homepage",
-                  preview_path: "",
                   fields: [
                     { label: "Hero Title", name: "heroTitle", widget: "string" },
                     { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" },
@@ -123,7 +121,7 @@
             }
           ]
         });
-      });
+      }
     </script>
   </body>
 </html>
