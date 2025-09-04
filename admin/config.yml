@@ -21,7 +21,7 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Intro", name: "intro", widget: "text" }
           - { label: "Mission", name: "mission", widget: "text" }
-          - { label: "Why Choose Us", name: "why", widget: "list", field: { label: "Point", name: "point", widget: "string" } }
+          - { label: "Why Choose Us", name: "why", widget: "list", default: ["Affordable packages", "Trusted partners", "24/7 support"] }
 
   - name: "packages"
     label: "Travel Packages"
@@ -65,4 +65,5 @@ collections:
             widget: "list"
             fields:
               - { label: "Label", name: "label", widget: "string" }
-              - { label: "URL", name: "url", widget: "string" }  
+              - { label: "URL", name: "url", widget: "string" }
+
