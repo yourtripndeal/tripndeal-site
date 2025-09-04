@@ -14,24 +14,25 @@ collections:
   - name: "about"
     label: "About Us"
     files:
-      - file: "src/about.njk"
-        label: "About Page"
-        name: "about"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Intro", name: "intro", widget: "text" }
-          - { label: "Mission", name: "mission", widget: "text" }
-          - label: "Why Choose Us"
-            name: "why"
-            widget: "list"
-            field:
-              label: "Reason"
-              name: "reason"
-              widget: "string"
-            default:
-              - "Affordable packages"
-              - "Trusted partners"
-              - "24/7 support"
+  - file: "src/about.njk"
+    label: "About Page"
+    name: "about"
+    preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Intro", name: "intro", widget: "text" }
+      - { label: "Mission", name: "mission", widget: "text" }
+      - label: "Why Choose Us"
+        name: "why"
+        widget: "list"
+        field:
+          label: "Reason"
+          name: "reason"
+          widget: "string"
+        default:
+          - "Affordable packages"
+          - "Trusted partners"
+          - "24/7 support"
 
   - name: "packages"
     label: "Travel Packages"
