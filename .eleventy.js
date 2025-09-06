@@ -3,13 +3,18 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("favicon.ico");
-  eleventyConfig.addPassthroughCopy("favicon.png"); // Added in case you prefer PNG
+  eleventyConfig.addPassthroughCopy("favicon.png");
   eleventyConfig.addPassthroughCopy("src/images/logo.png");
   eleventyConfig.addPassthroughCopy("admin");
 
   // ✅ Optional: Watch for changes in styles
   eleventyConfig.setWatchThrottleWaitTime(100);
   eleventyConfig.addWatchTarget("src/styles.css");
+
+  // ✅ Define travelPackages collection
+  eleventyConfig.addCollection("travelPackages", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/packages/*.md");
+  });
 
   // ✅ Input/output directories
   return {
