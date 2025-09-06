@@ -46,6 +46,7 @@ collections:
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Slug", name: "slug", widget: "string", required: true }
+      - { label: "Permalink", name: "permalink", widget: "string", required: false }
 
   - name: "settings"
     label: "Site Settings"
