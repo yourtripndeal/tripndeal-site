@@ -1,0 +1,16 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<section class="py-20 px-4 max-w-screen-md mx-auto">
+  <h1 class="text-4xl font-bold text-indigo-700 mb-4">{{ title }}</h1>
+  <p class="text-lg text-gray-600 mb-6">{{ description }}</p>
+
+  {% if image %}
+    <img src="{{ image }}" alt="{{ title }}" class="w-full rounded-lg shadow-md mb-8">
+  {% endif %}
+
+  <div class="prose prose-lg text-gray-800">
+    {{ content | safe }}
+  </div>
+</section>
+{% endblock %}
