@@ -6,11 +6,16 @@
   <p class="text-lg text-gray-600 mb-6">{{ description }}</p>
 
   {% if image %}
-  <figure class="mb-8">
-    <img src="{{ image }}" alt="{{ title }}" loading="lazy" class="w-full max-w-xl mx-auto rounded-lg shadow-md">
-    <figcaption class="text-center text-sm text-gray-500 mt-2">{{ title }}</figcaption>
-  </figure>
-  {% endif %}
+<figure class="mb-8">
+  <img 
+    src="{{ image }}" 
+    alt="{{ title }}" 
+    loading="lazy" 
+    class="w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto rounded-lg shadow-md object-cover"
+  >
+  <figcaption class="text-center text-sm text-gray-500 mt-2">{{ title }}</figcaption>
+</figure>
+{% endif %}
 
   <div class="prose prose-lg text-gray-800">
     {{ content | safe }}
