@@ -3,8 +3,8 @@ title: Maldives Luxury Escape
 description: A premium 5-night stay in an overwater villa with ocean views
 image: src/images/maldives.jpg
 slug: maldives-luxury-escape
-layout: layouts/package.njk
-permalink: maldives-luxury-escape
+layout: package.njk
+permalink: packages/maldives-luxury-escape/
 ---
 
 ## 🗓️ Itinerary
