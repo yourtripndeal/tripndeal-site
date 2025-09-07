@@ -11,7 +11,8 @@
     src="{{ image }}" 
     alt="{{ title }}" 
     loading="lazy" 
-    class="w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto rounded-lg shadow-md object-cover"
+    decoding="async"
+    class="max-w-full max-h-[80vh] h-auto w-auto object-scale-down mx-auto rounded-lg shadow-md"
   >
   <figcaption class="text-center text-sm text-gray-500 mt-2">{{ title }}</figcaption>
 </figure>
