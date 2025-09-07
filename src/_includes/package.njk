@@ -11,11 +11,11 @@
   {% if image %}
   <figure class="mb-8">
     <img 
-  src="/images/maldives-optimized.jpg" 
-  alt="Maldives Luxury Escape" 
+  src="{{ image }}" 
+  alt="{{ title }}" 
   loading="lazy" 
   decoding="async"
-  class="max-w-xl h-auto object-contain mx-auto rounded-lg shadow-md"
+  class="package-image rounded-lg shadow-md"
 >
     <figcaption class="text-center text-sm text-gray-500 mt-2">{{ title }}</figcaption>
   </figure>
