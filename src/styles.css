@@ -165,3 +165,13 @@ img.responsive-img {
   margin-left: auto;
   margin-right: auto;
 }
+/* Emergency override for Maldives image */
+img[src*="maldives-optimized.jpg"] {
+  display: block !important;
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
