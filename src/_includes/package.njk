@@ -1,12 +1,32 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-  <article class="package">
-    <h1>{{ title }}</h1>
-    <div class="package-body">
-      {{ content | safe }}
-    </div>
+<section class="py-20 px-4 max-w-screen-md mx-auto">
+  <h1 class="text-4xl font-bold text-indigo-700 mb-4">{{ title }}</h1>
 
-    <p><a href="/packages/">← Back to all packages</a></p>
-  </article>
+  {% if description %}
+    <p class="text-lg text-gray-600 mb-6">{{ description }}</p>
+  {% endif %}
+
+  {% if image %}
+  <figure class="mb-8">
+    <img 
+      src="{{ image }}" 
+      alt="{{ title }}" 
+      loading="lazy" 
+      decoding="async"
+      class="responsive-img rounded-lg shadow-md"
+    >
+    <figcaption class="text-center text-sm text-gray-500 mt-2">{{ title }}</figcaption>
+  </figure>
+  {% endif %}
+
+  <div class="prose prose-lg text-gray-800 mb-8">
+    {{ content | safe }}
+  </div>
+
+  <p>
+    <a href="/packages/" class="text-blue-600 hover:underline">← Back to all packages</a>
+  </p>
+</section>
 {% endblock %}
