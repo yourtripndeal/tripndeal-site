@@ -47,6 +47,19 @@
 </section>
 
   <main>
+  
+<section class="py-20 px-4 max-w-screen-md mx-auto">
+  <h1 class="text-4xl font-bold text-indigo-700 mb-4">Maldives Luxury Escape</h1>
+  <p class="text-lg text-gray-600 mb-6">A premium 5-night stay in an overwater villa with ocean views</p>
+
+  
+  <figure class="mb-8">
+    <img src="src/images/maldives.jpg" alt="Maldives Luxury Escape" loading="lazy" class="w-full max-w-xl mx-auto rounded-lg shadow-md">
+    <figcaption class="text-center text-sm text-gray-500 mt-2">Maldives Luxury Escape</figcaption>
+  </figure>
+  
+
+  <div class="prose prose-lg text-gray-800">
     <h2>🗓️ Itinerary</h2>
 <ul>
 <li><strong>Day 1:</strong> Arrival and welcome dinner at the resort</li>
@@ -70,8 +83,10 @@
 <li>Personalized concierge service</li>
 </ul>
 
-  </main>
+  </div>
+</section>
 
+</main>
 
 <footer class="bg-gray-100 py-10 mt-20">
   <div class="max-w-screen-xl mx-auto px-4 text-center text-gray-600">

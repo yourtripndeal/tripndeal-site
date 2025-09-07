@@ -36,9 +36,8 @@
   {% include "hero.njk" %}
 
   <main>
-    {{ content | safe }}
-  </main>
-{% set footer = footer %}
+  {% block content %}{% endblock %}
+</main>
 
 <footer class="bg-gray-100 py-10 mt-20">
   <div class="max-w-screen-xl mx-auto px-4 text-center text-gray-600">
